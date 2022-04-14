@@ -24,7 +24,16 @@ And Ctrl-C or 'q' to quit
 #from base environment
 pip install pyinstaller urwid
 pyinstaller update_ipykernels.py --onefile --collect-all urwid
+pip uninstall pyinstaller urwid
+
+#or directly from cli environment
+pyinstaller update_ipykernels.py --onefile --collect-all urwid
+
+#then
+mkdir ~/Applications/update_ipykernels/
+cp dist/update_ipykernels ~/Applications/update_ipykernels/
+# and add ~/Applications/update_ipykernels/ in PATH
 ```
 
-and then we can run `dist/update_ipykernels`
+and then we can run `update_ipykernels`
 
