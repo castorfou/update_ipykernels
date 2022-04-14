@@ -1,10 +1,6 @@
 # update_ipykernels
 
-using [PyInquirer](https://codeburst.io/building-beautiful-command-line-interfaces-with-python-26c7e1bb54df#PyInquirer)
-
-or [Blessed](https://pypi.org/project/blessed/)
-
-or [Urwid](http://urwid.org/)
+using [Urwid](http://urwid.org/)
 
 
 Create an interactive command application which proposes
@@ -19,3 +15,16 @@ Create an interactive command application which proposes
   - when I uncheck, it removes the kernel (`jupyter kernelspec remove <kernel_name>`)
 
 And Ctrl-C or 'q' to quit
+
+
+
+# Turn update_ipykernels into an app
+
+```bash
+#from base environment
+pip install pyinstaller urwid
+pyinstaller update_ipykernels.py --onefile --collect-all urwid
+```
+
+and then we can run `dist/update_ipykernels`
+
