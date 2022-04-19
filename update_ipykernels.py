@@ -103,7 +103,7 @@ def main():
             base_env=`conda info | grep -i 'base environment' | cut -d':' -f2| cut -d'(' -f1`
             base_env=`echo $base_env | sed 's/ *$//g'`
             source "$base_env"/etc/profile.d/conda.sh
-            conda activate base
+            conda activate {env}
             python -m ipykernel install --user --name={env}\
             '''.format(env=env)
             process = subprocess.Popen('/bin/bash', stdin=subprocess.PIPE, stdout=subprocess.DEVNULL)
